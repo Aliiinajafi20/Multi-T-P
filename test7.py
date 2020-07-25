@@ -1,8 +1,8 @@
 import pnmt
-import time
+import  time
 
-n = int(input("enter a number:"))
-t = int(input("enter a thread cunt:"))
+n = int(input("enter a number: "))
+t = int(input("enter a thread cunt: "))
 
 
 start_time = time.time()

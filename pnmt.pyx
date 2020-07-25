@@ -1,19 +1,19 @@
 import threading
 
-def threadfunction(int s,int e):
+def Threadfunction(int s,int e):
     cdef unsigned int i
     for i in range(s, e):
-        if checkperfectnumber(i):
+        if CheckPerfectNumber(i):
             print(i)
 
 
 def PerfectNumber(int n,int t):
     cdef unsigned int i , l , s , e
     l = int(n / t)
-    s, e =1, 1
+    s, e =1, l
     threads = []
     for i in range(t):
-        threads.append(threading.Thread(target=threadfunction, args=(s, e)))
+        threads.append(threading.Thread(target=Threadfunction, args=(s, e)))
         threads[i].start()
         s += 1
         e += 1
@@ -22,7 +22,7 @@ def PerfectNumber(int n,int t):
         thread.join()
 
 
-cdef inline int checkperfectnumber(int n) nogil:
+cdef inline int CheckPerfectNumber(int n) nogil:
     cdef unsigned int k
     cdef unsigned int s
     k = 1
